@@ -29,5 +29,6 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |--------------|--------------------------------|---------|
 | 11:15 - 12:00| Brief theoretical introduction on Additive Bayesian modelling | [Presentation](source/Presentations/useR_intro.pdf)|
 | 12:00 - 13:00| Hands-on exercises| [Presentation](source/Presentations/Hands-on_exercise.pdf) / [Hands-on exercises](hands_on_useR_2021.html) / [Zip folder](source/Material/1-HO.zip)|
-| 13:00 - 13:20| Advanced ABN modelling | [Presentation](source/Presentations/useR_advance.pdf) /  [Hands-on exercises](Excercise_advances.html) / [Zip folder](source/Material/2-HO.zip)|
+| 13:00 - 13:20| Advanced ABN modelling | [Presentation](source/Presentations/useR_advance.pdf) 
+| 13:20 - 13:40| Hands-on exercises on advanced features | [Hands-on exercises](Excercise_advances.html) / [Zip folder](source/Material/2-HO.zip)|
 |13:40 - 13:45| Wrap-up and discussions | |
