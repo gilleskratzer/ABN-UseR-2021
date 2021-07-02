@@ -1,7 +1,7 @@
 
 # Getting started checklist
 
-In order to best profit from the workshop please follow the instruction below. R is a programming language that is especially powerful for data exploration, visualization, and statistical analysis. To interact with R, we recommend to use RStudio.
+In order to best profit from the workshop please follow the instruction below. **R** is a programming language that is especially powerful for data exploration, visualization, and statistical analysis. To interact with **R**, we recommend to use RStudio.
 
 1. Install [R](https://www.r-project.org/)
 2. Install [RStudio](https://www.rstudio.com/) (not mandatory but strongly recommended)
@@ -17,6 +17,6 @@ install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-d
 ```r
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install("Rgraphviz", version = "3.8")
+BiocManager::install("Rgraphviz")
 ```
 6. Install [JAGS](http://mcmc-jags.sourceforge.net/). Operating System dependant
