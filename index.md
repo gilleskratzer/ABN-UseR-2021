@@ -32,3 +32,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | 13:00 - 13:20| Advanced ABN modelling | [Presentation](source/Presentations/useR_advance.pdf) 
 | 13:20 - 13:40| Hands-on exercises on advanced features | [Hands-on exercises](hands_on_advanced_useR_2021.html) / [Zip folder](source/Material/2-HO.zip)|
 |13:40 - 13:45| Wrap-up and discussions | |
+
+More resources for **abn** are available at [http://r-bayesian-networks.org/](http://r-bayesian-networks.org/)
+
+*Note: a previous version of this workshop (co presented with Arianna Comin) has been presented at the SVEPM workshop 2019. The material is available [here](https://gilleskratzer.github.io/SVEPM2019/)* 
