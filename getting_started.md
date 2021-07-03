@@ -5,7 +5,11 @@ In order to best profit from the workshop please follow the instruction below. *
 
 1. Install [R](https://www.r-project.org/)
 2. Install [RStudio](https://www.rstudio.com/) (not mandatory but strongly recommended)
-3. Install [abn](https://cran.r-project.org/package=abn):
+3. Install [abn](https://cran.r-project.org/package=abn) from **CRAN** and all dependencies
+```r
+install.packages("abn")
+```
+3.1 *Optionally*, install latest version not yet on CRAN:  
 ```r
 install.packages("abn")
 ```
