@@ -17,6 +17,11 @@ install.packages("abn")
 ```r
 install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
 ```
+4.1 Alternatively, you can download it and install from a local repository
+```r
+download.file("https://inla.r-inla-download.org/R/stable", path_to_file)
+install.packages(path_to_file, repos = NULL, type="source")
+```
 5. Install [Rgraphviz](http://www.bioconductor.org/packages/release/bioc/html/Rgraphviz.html)
 ```r
 if (!requireNamespace("BiocManager", quietly = TRUE))
