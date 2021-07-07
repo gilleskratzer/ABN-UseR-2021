@@ -218,7 +218,6 @@ pre code {
 <li><a href="#visually-inspect-the-marginal-posterior-distributions-of-the-parameters">Visually inspect the marginal posterior distributions of the parameters</a></li>
 </ul></li>
 <li><a href="#get-the-table-of-quantiles-for-the-marginals">Get the table of quantiles for the marginals</a></li>
-<li><a href="#calculate-the-link-strenght-optional">Calculate the link strenght (optional)</a></li>
 <li><a href="#present-final-results">Present final results</a></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -1397,7 +1396,7 @@ median
 97.5Q
 </th>
 <th style="text-align:right;">
-interpretation
+Interpretation
 </th>
 </tr>
 </thead>
@@ -1557,284 +1556,17 @@ correlation
 </tr>
 </tbody>
 </table>
-<p> </p>
-</div>
-<div id="calculate-the-link-strenght-optional" class="section level1">
-<h1>Calculate the link strenght (optional)</h1>
-<p>Calculating <strong>link strength</strong> is useful for both visualization and approximate inference, and it can be seen as an analogous of a p-value. In addition, the strength of the edges is as important as the existence of the edges and it is a complementary metric to regression coefficients. We will use a link strength metric called <em>true average link strength percentage</em> (LS%), which expresses by how many percentage points the uncertainty in variable Y is reduced by knowing the state of its parent X, if the states of all other parent variables are known (averaged over the parent states using their actual joint probability).</p>
-<pre class="r"><code>LS &lt;- linkStrength(dag = trim.dag, data.df = as.data.frame(abndata),
-                    data.dists = dist, method=&quot;ls.pc&quot;)
-rownames(LS) &lt;- colnames(LS) &lt;- names(abndata)
-
-
-knitr::kable(LS, row.names = TRUE, digits = 3, align = &quot;rrr&quot;, &quot;html&quot;) %&gt;%
-  kable_styling(full_width = FALSE, position = &quot;left&quot;)</code></pre>
-<table class="table" style="width: auto !important; ">
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-AR
-</th>
-<th style="text-align:right;">
-pneumS
-</th>
-<th style="text-align:right;">
-female
-</th>
-<th style="text-align:right;">
-livdam
-</th>
-<th style="text-align:right;">
-eggs
-</th>
-<th style="text-align:right;">
-wormCount
-</th>
-<th style="text-align:right;">
-age
-</th>
-<th style="text-align:right;">
-adg
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-AR
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.089
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-pneumS
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-female
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-livdam
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.040
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-eggs
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.128
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-wormCount
-</td>
-<td style="text-align:right;">
-0.282
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.407
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.434
-</td>
-<td style="text-align:right;">
-0.376
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-age
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.019
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-adg
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.390
-</td>
-<td style="text-align:right;">
-0.000
-</td>
-</tr>
-</tbody>
-</table>
+<!-- &nbsp; -->
+<!-- # Calculate the link strenght (optional) -->
+<!-- Calculating **link strength** is useful for both visualization and approximate inference, and it can be seen as an analogous of a p-value. In addition, the strength of the edges is as important as the existence of the edges and it is a complementary metric to regression coefficients. -->
+<!-- We will use a link strength metric called *true average link strength percentage* (LS%), which expresses by how many percentage points the uncertainty in variable Y is reduced by knowing the state of its parent X, if the states of all other parent variables are known (averaged over the parent states using their actual joint probability). -->
+<!-- ```{r LinkStrength, echo=TRUE, cache=FALSE} -->
+<!-- LS <- linkStrength(dag = trim.dag, data.df = as.data.frame(abndata), -->
+<!--                     data.dists = dist, method="ls.pc") -->
+<!-- rownames(LS) <- colnames(LS) <- names(abndata) -->
+<!-- knitr::kable(LS, row.names = TRUE, digits = 3, align = "rrr", "html") %>% -->
+<!--   kable_styling(full_width = FALSE, position = "left") -->
+<!-- ``` -->
 <p> </p>
 </div>
 <div id="present-final-results" class="section level1">
@@ -1865,10 +1597,7 @@ median
 97.5Q
 </th>
 <th style="text-align:right;">
-interpretation
-</th>
-<th style="text-align:right;">
-LS
+Interpretation
 </th>
 </tr>
 </thead>
@@ -1889,9 +1618,6 @@ AR|age
 <td style="text-align:right;">
 odds ratio
 </td>
-<td style="text-align:right;">
-0.089
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1908,9 +1634,6 @@ livdam|eggs
 </td>
 <td style="text-align:right;">
 odds ratio
-</td>
-<td style="text-align:right;">
-0.040
 </td>
 </tr>
 <tr>
@@ -1929,9 +1652,6 @@ eggs|adg
 <td style="text-align:right;">
 odds ratio
 </td>
-<td style="text-align:right;">
-0.128
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1948,9 +1668,6 @@ wormCount|AR
 </td>
 <td style="text-align:right;">
 rate ratio
-</td>
-<td style="text-align:right;">
-0.282
 </td>
 </tr>
 <tr>
@@ -1969,9 +1686,6 @@ wormCount|eggs
 <td style="text-align:right;">
 rate ratio
 </td>
-<td style="text-align:right;">
-0.407
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1988,9 +1702,6 @@ wormCount|age
 </td>
 <td style="text-align:right;">
 rate ratio
-</td>
-<td style="text-align:right;">
-0.434
 </td>
 </tr>
 <tr>
@@ -2009,9 +1720,6 @@ wormCount|adg
 <td style="text-align:right;">
 rate ratio
 </td>
-<td style="text-align:right;">
-0.376
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2029,9 +1737,6 @@ age|female
 <td style="text-align:right;">
 correlation
 </td>
-<td style="text-align:right;">
-0.019
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -2048,9 +1753,6 @@ adg|age
 </td>
 <td style="text-align:right;">
 correlation
-</td>
-<td style="text-align:right;">
-0.390
 </td>
 </tr>
 </tbody>
