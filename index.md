@@ -36,3 +36,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 More resources for **abn** are available at [http://r-bayesian-networks.org/](http://r-bayesian-networks.org/)
 
 *Note: a previous version of this workshop (co presented with Arianna Comin) has been presented at the SVEPM workshop 2019. The material is available [here](https://gilleskratzer.github.io/SVEPM2019/)* 
+
+***
+
+During the workshop, some questions were asked on slack channel. We create an [FAQ](faq.md). We hope that it could be usefull and that participants enjoyed the workshop.
